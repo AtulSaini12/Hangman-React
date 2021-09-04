@@ -15,6 +15,15 @@ body,
   overflow: hidden;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 h1 {
   margin: 20px 0 0;
 }
@@ -52,7 +61,7 @@ h1 {
 }
 
 .wrong-letters-container span {
-  font-size: 24px;
+  font-size: 1.2rem;
 }
 
 .word {
@@ -128,4 +137,36 @@ h1 {
 
 .notification-container.show {
   transform: translateY(-50px);
+}
+
+@media only screen and (max-width: 500px) {
+  body {
+    margin-left: 25%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    overflow-x: hidden;
+  }
+
+  .popup-container {
+    width: 80%;
+    font-size: 0.6rem;
+  }
+  .game-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .wrong-letters-container {
+    position: relative;
+    top: 60%;
+    left: 4%;
+    align-self: flex-start;
+  }
+
+  .notification-container {
+    top: 90%;
+    height: fit-content;
+    left: 10%;
+  }
 }
